@@ -1,0 +1,129 @@
+<h2 class="page-header">{{name}}'s Profile</h2>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">Key</th>
+          <th scope="col">Value</th>
+          <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Name</th>
+            <td>{{name}}</td>
+            <td>
+                <button class="button" data-toggle="modal" (click)="onEditClick()" data-target="#editNameModal"><i class="fas fa-edit"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Username</th>
+            <td>{{username}}</td>
+            <td>
+                <button class="button" data-toggle="modal" (click)="onEditClick()" data-target="#editUsernameModal"><i class="fas fa-edit"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{email}}</td>
+            <td>
+                <button class="button" data-toggle="modal" (click)="onEditClick()" data-target="#editEmailModal"><i class="fas fa-edit"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Edit Name Modal -->
+<div class="modal" id="editNameModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Name</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input [formControl]="formname" type="text" name="name" class="form-control" [(ngModel)]="editname" id="name" placeholder="Enter Name..." required>
+                    <mat-error *ngIf="formname.invalid">{{nameErrorMessage()}}</mat-error>
+                </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button [disabled]="formname.invalid" type="button" class="btn btn-primary" (click)="onUpdateClick()">Update</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+</div>
+
+<!-- Edit Username Modal -->
+<div class="modal" id="editUsernameModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Username</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input [formControl]="formusername" type="text" name="username" class="form-control" [(ngModel)]="editusername" id="username" placeholder="Enter Username..." required>
+                    <mat-error *ngIf="formusername.invalid">{{usernameErrorMessage()}}</mat-error>
+                </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button [disabled]="formusername.invalid" type="button" class="btn btn-primary" (click)="onUpdateClick()">Update</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+</div>
+
+<!-- Edit Email Modal -->
+<div class="modal" id="editEmailModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Email</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [formControl]="formemail" type="text" name="email" class="form-control" [(ngModel)]="editemail" id="email" placeholder="Enter Email..." required>
+                    <mat-error *ngIf="formemail.invalid">{{emailErrorMessage()}}</mat-error>
+                </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button [disabled]="formemail.invalid" type="button" class="btn btn-primary" (click)="onUpdateClick()">Update</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+</div>

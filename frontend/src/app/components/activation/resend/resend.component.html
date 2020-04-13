@@ -1,0 +1,10 @@
+<h2 class="page-header">Resend Activation Link</h2>
+<form (submit)="onResendSubmit()">
+<!-- <form> -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input [disabled]="disable" type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email...">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <button [disabled]="disable" type="submit" class="btn btn-primary">Send</button>
+</form>

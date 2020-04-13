@@ -1,0 +1,57 @@
+<h2 class="page-header">Edit User</h2>
+
+<ngb-tabset [destroyOnHide]="false">
+    <ngb-tab title="Name">  
+      <ng-template ngbTabContent>  
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input [disabled]="!callerIsAdmin && isAdmin" type="text" name="name" class="form-control" [(ngModel)]="name" id="name" placeholder="Enter Name...">
+            </div>
+            <button [disabled]="!callerIsAdmin && isAdmin" (click)="updateName();" class="btn btn-success">Update</button>
+        </form>  
+      </ng-template>  
+    </ngb-tab>     
+  
+    <ngb-tab>  
+      <ng-template ngbTabTitle>Username</ng-template>  
+      <ng-template ngbTabContent>  
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input [disabled]="!callerIsAdmin && isAdmin" type="text" name="username" class="form-control" [(ngModel)]="username" id="username" placeholder="Enter Userame...">
+            </div>
+            <button [disabled]="!callerIsAdmin && isAdmin" (click)="updateUsername();" class="btn btn-success">Update</button>
+        </form>
+      </ng-template>  
+    </ngb-tab>     
+  
+    <ngb-tab title="Email">  
+        <ng-template ngbTabContent>  
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [disabled]="!callerIsAdmin && isAdmin" type="email" name="email" class="form-control" [(ngModel)]="email" id="email" placeholder="Enter Email...">
+                </div>
+                <button [disabled]="!callerIsAdmin && isAdmin" (click)="updateEmail();" class="btn btn-success">Update</button>
+            </form> 
+        </ng-template>  
+    </ngb-tab>    
+  
+    <ngb-tab>  
+        <ng-template ngbTabTitle>Permission</ng-template>  
+        <ng-template ngbTabContent>  
+            <br>
+            <p>Current Permission: <strong>{{permission}}</strong></p>
+            <br>
+            <form>
+                <button *ngIf="(isGuest || isModerator) && !isAdmin" [disabled]="!callerIsAdmin && (isAdmin || isGuest || isModerator)" (click)="grantAdmin();" class="btn btn-primary">Grant Admin</button>
+                <button *ngIf="(isGuest || isAdmin) && !isModerator" [disabled]="!callerIsAdmin && isAdmin" (click)="grantModerator();" class="btn btn-info">Grant Moderator</button>
+                <button *ngIf="(isAdmin || isModerator) && !isGuest" [disabled]="!callerIsAdmin && isAdmin" (click)="grantUser()" class="btn btn-danger">Grant User</button>
+            </form>
+        </ng-template>  
+    </ngb-tab>   
+</ngb-tabset>

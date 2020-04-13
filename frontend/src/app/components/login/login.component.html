@@ -1,0 +1,28 @@
+<h2 class="page-header">Login</h2>
+<form>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input [disabled]="disable || socialLogin" type="text" [(ngModel)]="username" name="username" class="form-control" id="username" placeholder="Enter Username...">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input [disabled]="disable || socialLogin" type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="Enter password...">
+    </div>
+    <!-- <button type="submit" class="btn btn-primary">Login</button> -->
+    <button [disabled]="disable || socialLogin" class="btn btn-success" (click)="onLoginSubmit()">Login</button>
+    <button *ngIf="expired" class="btn btn-warning" (click)="onResendClick()" style="margin-left: 0.5rem;">Resend Activation Link</button>
+    <div class="reset">
+      <button [disabled]="disable || socialLogin" *ngIf="incusername" class="btn btn-info" (click)="onUsernameClick()" style="margin-left: 0.5rem;">Forgot Username?</button>
+      <button [disabled]="disable || socialLogin" *ngIf="incpassword" class="btn btn-danger" (click)="onPasswordClick()" style="margin-left: 0.5rem;">Forgot Password?</button>
+    </div>
+    <br>
+    <b>OR</b>
+    <br>
+    <button [disabled]="disable" class="btn btn-primary fb-btn" (click)="fbLogin()"><i class="fab fa-facebook-f fa-2x" aria-hidden="true"></i>acebook</button>
+    <!-- <button onclick="window.open('/auth/facebook');return false;"><button class="btn btn-primary fb-btn"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i> Login With Facebook</button></a> -->
+    <!-- <button class="btn btn-primary fb-btn" (click)="fbLogin()"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i> Login With Facebook</button> -->
+
+    <button [disabled]="disable" class="btn btn-info" (click)="twLogin()" style="margin-left: 0.5rem;"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i>witter</button>
+    <button [disabled]="disable" class="btn btn-danger" (click)="gLogin()" style="margin-left: 0.5rem;"><i class="fab fa-google fa-2x" aria-hidden="true"></i>oogle</button>
+
+</form>

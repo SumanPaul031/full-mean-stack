@@ -84,11 +84,11 @@ module.exports = function(router) {
             user.save().then(() => {
 
                 var email = {
-                    from: 'Localhost Staff, Staff@localhost.com',
+                    from: 'MEAN App Staff',
                     to: user.email,
-                    subject: 'Localhost:3000 activation link',
-                    text: 'Hello '+user.name+'.\n\nPlease click on the link below to activate your account.\n\nlocalhost:3000/activate/'+user.temporarytoken,
-                    html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to activate your account.<br><br><a href="http://localhost:3000/activate/'+user.temporarytoken+'">http://localhost:3000/activate/</a>'
+                    subject: 'MEAN-App-Full activation link',
+                    text: 'Hello '+user.name+'.\n\nPlease click on the link below to activate your account.\n\nhttps://mean-app-full.herokuapp.com/activate/'+user.temporarytoken,
+                    html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to activate your account.<br><br><a href="https://mean-app-full.herokuapp.com/activate/'+user.temporarytoken+'">https://mean-app-full.herokuapp.com/activate/</a>'
                 };
             
                 client.sendMail(email, function(error, info){
@@ -276,9 +276,9 @@ module.exports = function(router) {
                     user.active = true;
                     user.save().then(() => {
                         var email = {
-                            from: 'Localhost Staff, Staff@localhost.com',
+                            from: 'MEAN App Staff',
                             to: user.email,
-                            subject: 'Localhost:3000 account activated',
+                            subject: 'MEAN-App-Full account activated',
                             text: 'Hello '+user.name+'.\n\nYour account has been successfully activated',
                             html: 'Hello <strong>'+user.name+'</strong>.<br><br>Your account has been successfully activated'
                         };
@@ -338,11 +338,11 @@ module.exports = function(router) {
 
             user.save().then(() => {
                 var email = {
-                    from: 'Localhost Staff, Staff@localhost.com',
+                    from: 'MEAN App Staff',
                     to: user.email,
-                    subject: 'Localhost:3000 activation link request',
-                    text: 'Hello '+user.name+'.\n\nPlease click on the link below to activate your account.\n\nlocalhost:3000/activate/'+user.temporarytoken,
-                    html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to activate your account.<br><br><a href="http://localhost:3000/activate/'+user.temporarytoken+'">http://localhost:3000/activate/</a>'
+                    subject: 'MEAN-App-Full activation link request',
+                    text: 'Hello '+user.name+'.\n\nPlease click on the link below to activate your account.\n\nhttps://mean-app-full.herokuapp.com/activate/'+user.temporarytoken,
+                    html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to activate your account.<br><br><a href="https://mean-app-full.herokuapp.com/activate/'+user.temporarytoken+'">https://mean-app-full.herokuapp.com/activate/</a>'
                 };
             
                 client.sendMail(email, function(error, info){
@@ -393,9 +393,9 @@ module.exports = function(router) {
                         });
                     } else{
                         var email = {
-                            from: 'Localhost Staff, Staff@localhost.com',
+                            from: 'MEAN App Staff',
                             to: user.email,
-                            subject: 'Localhost:3000 Username request',
+                            subject: 'MEAN-App-Full Username request',
                             text: 'Hello '+user.name+'.\n\nYour Username is '+user.username,
                             html: 'Hello <strong>'+user.name+'</strong>.<br><br>Your Username is <strong>'+user.username+'</strong>'
                         };
@@ -444,11 +444,11 @@ module.exports = function(router) {
 
                     user.save().then(() => {
                         var email = {
-                            from: 'Localhost Staff, Staff@localhost.com',
+                            from: 'MEAN App Staff',
                             to: user.email,
-                            subject: 'Localhost:3000 reset Password request',
-                            text: 'Hello '+user.name+'.\n\nPlease click on the link below to reset your password.\n\nhttp://localhost:3000/newpassword/'+user.resettoken,
-                            html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to reset your password.<br><br><a href="http://localhost:3000/newpassword/'+user.resettoken+'">http://localhost:3000/newpassword/</a>'
+                            subject: 'MEAN-App-Full reset Password request',
+                            text: 'Hello '+user.name+'.\n\nPlease click on the link below to reset your password.\n\nhttps://mean-app-full.herokuapp.com/newpassword/'+user.resettoken,
+                            html: 'Hello <strong>'+user.name+'</strong>.<br><br>Please click on the link below to reset your password.<br><br><a href="https://mean-app-full.herokuapp.com/newpassword/'+user.resettoken+'">http://localhost:3000/newpassword/</a>'
                         };
                     
                         client.sendMail(email, function(error, info){
@@ -523,9 +523,9 @@ module.exports = function(router) {
                 user.save().then(() => {
 
                     var email = {
-                        from: 'Localhost Staff, Staff@localhost.com',
+                        from: 'MEAN App Staff',
                         to: user.email,
-                        subject: 'Localhost:3000 Password Successfully Reset',
+                        subject: 'MEAN-App-Full Password Successfully Reset',
                         text: 'Hello '+user.name+'.\n\nYour password has been successfully reset',
                         html: 'Hello <strong>'+user.name+'</strong>.<br><br>Your password has been successfully reset'
                     };

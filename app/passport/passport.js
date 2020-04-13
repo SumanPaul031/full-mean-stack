@@ -41,7 +41,7 @@ module.exports = function(app, passport) {
     passport.use(new FacebookStrategy({
         clientID: '937406590010553',
         clientSecret: 'd897db445238a32e4cac44b2afec2dfc',
-        callbackURL: "http://localhost:3000/auth/facebook/callback",
+        callbackURL: "https://mean-app-full.herokuapp.com/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos', 'email']
       },
       function(accessToken, refreshToken, profile, done) {
@@ -83,7 +83,7 @@ module.exports = function(app, passport) {
     passport.use(new TwitterStrategy({
         consumerKey: 'ESDZqN4tLDcuGMCnMdLFQfsWx',
         consumerSecret: 'uqZs3LxvsGaFtT6J6wCmGwZX2fvPHGFHXumLvQwksD3fdCVrYk',
-        callbackURL: "http://localhost:3000/auth/twitter/callback",
+        callbackURL: "https://mean-app-full.herokuapp.com/auth/twitter/callback",
         userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"
       },
       function(token, tokenSecret, profile, done) {
@@ -124,7 +124,7 @@ module.exports = function(app, passport) {
     passport.use(new GoogleStrategy({
         clientID: '609232992248-4gfcqhqc0fjhrse7v8hrmobtnrlqemik.apps.googleusercontent.com',
         clientSecret: 'LGRs5tAQk02lbUopS4Ux3ndx',
-        callbackURL: "http://localhost:3000/auth/google/callback"
+        callbackURL: "https://mean-app-full.herokuapp.com/auth/google/callback"
       },
       function(accessToken, refreshToken, profile, done) {
         console.log(profile);

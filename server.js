@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use('/api', appRoutes);
 
-mongoose.connect('mongodb://localhost:27017/MEAN-app-full', function(err){
+mongoose.connect('mongodb+srv://sumanpaul0209:R%40scal99toku49@mean-app-full-eyqir.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true }, function(err){
     if(err){
         console.log('Not connected to the database: '+err);
     } else{

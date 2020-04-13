@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://sumanpaul0209:R%40scal99toku49@mean-app-full-eyq
 });
 
 app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
 app.listen(port, function(){
